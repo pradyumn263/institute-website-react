@@ -136,6 +136,12 @@ const navbarSampleData = [
                 "href":"/statutory-policies"
             }
         ]
+    },
+    {
+        title: "Google",
+        destination: "external",
+        href: "https://www.google.com",
+        dropdown: []
     }
 ]
 
@@ -262,24 +268,34 @@ const Navbar = ({navbarData = navbarSampleData}) => {
 
                                                 return (
                                                     <li>
-                                                        <Link to={navItem.href}>
-                                                            {navItem.title}
-                                                        </Link>
-
-                                                        <ul className={"rd-navbar-dropdown"}>
-                                                            {
-                                                                navItem.dropdown.map((dropdownItem) => {
-                                                                    return (
-                                                                        <li>
-                                                                            <a href={dropdownItem.href}>
-                                                                                {dropdownItem.title}
-                                                                            </a>
-                                                                        </li>
-                                                                    )
-                                                                })
-                                                            }
-                                                        </ul>
-
+                                                        {
+                                                            navItem.destination === "internal" &&
+                                                            <Link to={navItem.href}>
+                                                                {navItem.title}
+                                                            </Link>
+                                                        }
+                                                        {
+                                                            navItem.destination === "external" &&
+                                                                <a href={navItem.href}>
+                                                                    {navItem.title}
+                                                                </a>
+                                                        }
+                                                        {
+                                                            navItem.dropdown.length > 0 &&
+                                                            <ul className={"rd-navbar-dropdown"}>
+                                                                {
+                                                                    navItem.dropdown.map((dropdownItem) => {
+                                                                        return (
+                                                                            <li>
+                                                                                <a href={dropdownItem.href}>
+                                                                                    {dropdownItem.title}
+                                                                                </a>
+                                                                            </li>
+                                                                        )
+                                                                    })
+                                                                }
+                                                            </ul>
+                                                        }
                                                     </li>
                                                 )
                                             })
