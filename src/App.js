@@ -1,11 +1,9 @@
-
-
 function App() {
-  return (
-    <div className="App">
-     <h1>National Institute of Technology Warangal</h1>
-    </div>
-  );
+    return (
+        <div className="page text-center">
+            <h1>NIT Warangal</h1>
+        </div>
+    );
 }
 
 export default App;
