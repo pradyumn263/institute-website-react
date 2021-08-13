@@ -1,8 +1,28 @@
+import React, {useEffect} from "react";
+import {Helmet} from "react-helmet";
+
+import EditorJSContentRenderer from "./components/EditorJSContentRenderer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 function App() {
+    useEffect(() => {
+        window.onpopstate = e => {
+            window.location.reload();
+        }
+    })
     return (
-        <div className="page text-center">
-            <h1>NIT Warangal</h1>
-        </div>
+        <React.Fragment>
+            <Helmet>
+                <script src={process.env.PUBLIC_URL + "/js/core.min.js"}></script>
+                <script src={process.env.PUBLIC_URL + "/js/script.js"}></script>
+            </Helmet>
+            <div className="page">
+                <Navbar></Navbar>
+                <EditorJSContentRenderer></EditorJSContentRenderer>
+                <Footer></Footer>
+            </div>
+        </React.Fragment>
     );
 }
 
