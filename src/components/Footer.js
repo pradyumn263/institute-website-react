@@ -40,10 +40,6 @@ const Footer = () => {
                             <span className="copyright-year"/>
                             <span>.&nbsp;</span>
                             <span>All Rights Reserved</span>
-                            <span>.&nbsp;</span>
-                            <a className="text-dark" href="privacy-policy.html">
-                                Privacy Policy
-                            </a>
                         </p>
                     </div>
                 </div>
