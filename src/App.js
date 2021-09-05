@@ -5,6 +5,8 @@ import EditorJSContentRenderer from "./components/EditorJSContentRenderer";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
+import Slideshow from "./components/Slideshow";
+import BreakingNews from "./components/BreakingNews";
 
 function App() {
     useEffect(() => {
@@ -22,6 +24,8 @@ function App() {
 
             <div className="page">
                 <Navbar></Navbar>
+                <Slideshow></Slideshow>
+                <BreakingNews></BreakingNews>
                 <EditorJSContentRenderer></EditorJSContentRenderer>
                 <Footer></Footer>
             </div>
