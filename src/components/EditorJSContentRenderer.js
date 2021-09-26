@@ -288,7 +288,7 @@ const config = {
 const styles = {}
 
 const classes = {
-    header: "offset-top-20",
+    header: "",
     list: {
         container: "list list-marked"
     },
@@ -312,16 +312,16 @@ const EditorJSContentRenderer = ({data = directorProfilePageData}) => {
                 <script src={process.env.PUBLIC_URL + "/js/core.min.js"}></script>
                 <script src={process.env.PUBLIC_URL + "/js/script.js"}></script>
             </Helmet>
-            <section className={"section text-md-start section-xl bg-default"}>
-                <div className="container">
-                    <div
-                        className="row">
-                        <div className="col-sm-10 col-xl-8 inset-xl-right-10 order-xl-1">
-                            <Output data={data} classNames={classes} config={config} renderers={renderers}></Output>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/*<section className={"section text-md-start section-xl bg-default"}>*/}
+            {/*    <div className="container">*/}
+            {/*        <div*/}
+            {/*            className="row">*/}
+            {/*            <div className="col-sm-10 col-xl-8 inset-xl-right-10 order-xl-1">*/}
+            <Output data={data} classNames={classes} config={config} renderers={renderers}></Output>
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
         </React.Fragment>
     )
 }

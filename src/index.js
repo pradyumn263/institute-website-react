@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import App from "./App";
 
 ReactDOM.render(
     <BrowserRouter>
-        <HomePage/>
+        <App></App>
     </BrowserRouter>,
     document.getElementById('root')
 );
