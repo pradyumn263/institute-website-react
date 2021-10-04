@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css"
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 const announcementsDataSample = {
     "heading": "Announcements and News",
@@ -26,7 +27,7 @@ const announcementsDataSample = {
             },
             {
                 "title":
-                    "NIT Warangal now allows 6 months Internship through CCPD",
+                    "N.I.T. Warangal now allows 6 months Internship through CCPD",
                 "startDate":
                     "3rd August, 2021",
                 "endDate":
@@ -38,7 +39,7 @@ const announcementsDataSample = {
             },
             {
                 "title":
-                    "NIT Warangal now has a new Website",
+                    "N.I.T. Warangal now has a new Website",
                 "startDate":
                     "30th July, 2021",
                 "endDate":
@@ -50,7 +51,7 @@ const announcementsDataSample = {
             },
             {
                 "title":
-                    "NIT Warangal now has a new Website",
+                    "N.I.T. Warangal now has a new Website",
                 "startDate":
                     "30th July, 2021",
                 "endDate":
@@ -62,7 +63,7 @@ const announcementsDataSample = {
             },
             {
                 "title":
-                    "NIT Warangal now has a new Website",
+                    "N.I.T. Warangal now has a new Website",
                 "startDate":
                     "30th July, 2021",
                 "endDate":
@@ -77,6 +78,8 @@ const announcementsDataSample = {
 
 
 const Announcements = ({announcementsData = announcementsDataSample}) => {
+    
+    const { speak } = useSpeechSynthesis();
     return (
         <React.Fragment>
             <div className="col-lg-4 text-start col-sm-8">
@@ -95,6 +98,7 @@ const Announcements = ({announcementsData = announcementsDataSample}) => {
                                                     <a href={announcement.url}>
                                                         {announcement.title}
                                                     </a>
+                                                <span onClick={() => speak({ text: announcement.title })} className="icon mdi mdi-bullhorn text-middle icon-xs text-madison"></span>
                                                 </h6>
                                                 <p className="text-dark">{announcement.startDate}</p>
                                             </article>
